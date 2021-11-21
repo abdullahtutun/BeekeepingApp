@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/arilik">
+
+    <fragment
+        android:id="@+id/arilik"
+        android:name="com.example.beekeeping.Fragments.ArilikFragment"
+        android:label="Arılık"
+        tools:layout="@layout/fragment_arilik" >
+        <action
+            android:id="@+id/action_arilik_to_denetimEkleFragment"
+            app:destination="@id/denetimEkleFragment" />
+        <action
+            android:id="@+id/action_arilik_to_gorevEkleFragment"
+            app:destination="@id/gorevEkleFragment" />
+        <action
+            android:id="@+id/action_arilik_to_notEkleFragment"
+            app:destination="@id/notEkleFragment" />
+        <action
+            android:id="@+id/action_arilik_to_kovanlar"
+            app:destination="@id/kovanlar" />
+        <action
+            android:id="@+id/action_arilik_to_denetimler"
+            app:destination="@id/denetimler" />
+        <action
+            android:id="@+id/action_arilik_to_gorevler"
+            app:destination="@id/gorevler" />
+        <action
+            android:id="@+id/action_arilik_to_notlar"
+            app:destination="@id/notlar" />
+    </fragment>
+    <fragment
+        android:id="@+id/kovanlar"
+        android:name="com.example.beekeeping.Fragments.KovanlarFragment"
+        android:label="Kovanlar"
+        tools:layout="@layout/fragment_kovanlar" >
+        <action
+            android:id="@+id/action_kovanlar_to_kovanEkleFragment"
+            app:destination="@id/kovanEkleFragment" />
+        <action
+            android:id="@+id/action_kovanlar_to_kovanDetayFragment"
+            app:destination="@id/kovanDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/denetimler"
+        android:name="com.example.beekeeping.Fragments.DenetimlerFragment"
+        android:label="Denetimler"
+        tools:layout="@layout/fragment_denetimler" >
+        <action
+            android:id="@+id/action_denetimler_to_denetimEkleFragment"
+            app:destination="@id/denetimEkleFragment" />
+        <action
+            android:id="@+id/action_denetimler_to_denetimDetayFragment"
+            app:destination="@id/denetimDetayFragment" />
+        <argument
+            android:name="kovanNo"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gorevler"
+        android:name="com.example.beekeeping.Fragments.GorevlerFragment"
+        android:label="Görevler"
+        tools:layout="@layout/fragment_gorevler" >
+        <action
+            android:id="@+id/action_gorevler_to_gorevEkleFragment"
+            app:destination="@id/gorevEkleFragment" />
+        <action
+            android:id="@+id/action_gorevler_to_gorevDetayFragment"
+            app:destination="@id/gorevDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notlar"
+        android:name="com.example.beekeeping.Fragments.NotlarFragment"
+        android:label="Notlar"
+        tools:layout="@layout/fragment_notlar" >
+        <action
+            android:id="@+id/action_notlar_to_notEkleFragment"
+            app:destination="@id/notEkleFragment" />
+        <action
+            android:id="@+id/action_notlar_to_notDetayFragment"
+            app:destination="@id/notDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/denetimEkleFragment"
+        android:name="com.example.beekeeping.Fragments.DenetimEkleFragment"
+        android:label="Denetim Ekle" >
+        <action
+            android:id="@+id/action_denetimEkleFragment_to_denetimler"
+            app:destination="@id/denetimler" />
+        <argument
+            android:name="kovan_no"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gorevEkleFragment"
+        android:name="com.example.beekeeping.Fragments.GorevEkleFragment"
+        android:label="Görev Ekle" >
+        <action
+            android:id="@+id/action_gorevEkleFragment_to_gorevler"
+            app:destination="@id/gorevler" />
+    </fragment>
+    <fragment
+        android:id="@+id/notEkleFragment"
+        android:name="com.example.beekeeping.Fragments.NotEkleFragment"
+        android:label="Not Ekle" >
+        <action
+            android:id="@+id/action_notEkleFragment_to_notlar"
+            app:destination="@id/notlar" />
+    </fragment>
+    <fragment
+        android:id="@+id/kovanEkleFragment"
+        android:name="com.example.beekeeping.Fragments.KovanEkleFragment"
+        android:label="Kovan Ekle" >
+        <action
+            android:id="@+id/action_kovanEkleFragment_to_kovanlar"
+            app:destination="@id/kovanlar"/>
+    </fragment>
+    <fragment
+        android:id="@+id/denetimDetayFragment"
+        android:name="com.example.beekeeping.Fragments.DenetimDetayFragment"
+        android:label="DenetimDetayFragment">
+
+        <argument android:name="denetim"
+            app:argType="com.example.beekeeping.Models.DenetimModel"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <fragment
+        android:id="@+id/gorevDetayFragment"
+        android:name="com.example.beekeeping.Fragments.GorevDetayFragment"
+        android:label="GorevDetayFragment" />
+    <fragment
+        android:id="@+id/kovanDetayFragment"
+        android:name="com.example.beekeeping.Fragments.KovanDetayFragment"
+        android:label="Kovan Detay" >
+
+        <argument android:name="kovan"
+            app:argType="com.example.beekeeping.Models.KovanModel"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_kovanDetayFragment_to_kovanlar"
+            app:destination="@id/kovanlar" />
+        <action
+            android:id="@+id/action_kovanDetayFragment_to_denetimler"
+            app:destination="@id/denetimler" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notDetayFragment"
+        android:name="com.example.beekeeping.Fragments.NotDetayFragment"
+        android:label="fragment_not_detay"
+        tools:layout="@layout/fragment_not_detay" />
+</navigation>

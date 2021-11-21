@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Arılık Takip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="kovan_kaynak">
+        <item>Satın alınan</item>
+        <item>Oğuldan</item>
+        <item>Bölme</item>
+    </string-array>
+
+    <string-array name="durum">
+        <item>Etkin</item>
+        <item>Pasif</item>
+        <item>Satılan</item>
+    </string-array>
+
+    <string-array name="hatirlatici">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+</resources>

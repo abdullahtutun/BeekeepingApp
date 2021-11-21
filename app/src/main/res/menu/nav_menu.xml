@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/arilik"
+        android:title="Arılık"
+        android:icon="@drawable/ic_bees"/>
+    <item
+        android:id="@+id/kovanlar"
+        android:title="Kovanlar"
+        android:icon="@drawable/ic_hive"/>
+    <item
+        android:id="@+id/denetimler"
+        android:title="Denetimler"
+        android:icon="@drawable/ic_control"/>
+    <item
+        android:id="@+id/gorevler"
+        android:title="Görevler"
+        android:icon="@drawable/ic_tasks"/>
+    <item
+        android:id="@+id/notlar"
+        android:title="Notlar"
+        android:icon="@drawable/ic_notebook"/>
+    <item
+        android:id="@+id/rehber"
+        android:title="Arıcılık Rehberi"
+        android:icon="@drawable/ic_guide"/>
+
+    <item android:id="@+id/yonetmelik"
+        android:title="Arıcılık Yönetmeliği"
+        android:icon="@drawable/ic_literature"/>
+
+    <item android:id="@+id/bizeUlasin"
+        android:title="Bize Ulaşın"
+        android:icon="@drawable/ic_contact_us"/>
+</menu>

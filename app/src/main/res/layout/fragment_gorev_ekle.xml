@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:id="@+id/clGorevEkle"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/textViewEkleme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Ekleme Tarihi"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGorevEkleETarih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="40dp"
+        android:hint="AA/GG/YYYY"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewEkleme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTamamlamam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="37dp"
+        android:text="Tamamlanacağı Tarihi"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEkleme" />
+
+    <TextView
+        android:id="@+id/tvGorevEkleTTarih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="34dp"
+        android:hint="AA/GG/YYYY"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewTamamlamam"
+        app:layout_constraintTop_toBottomOf="@+id/tvGorevEkleETarih" />
+
+    <TextView
+        android:id="@+id/textViewGorevBaslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="41dp"
+        android:text="Başlık"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTamamlamam" />
+
+    <EditText
+        android:id="@+id/etGorevBaslik"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Görev konusu"
+        android:inputType="textMultiLine"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewGorevBaslik"
+        app:layout_constraintTop_toBottomOf="@+id/tvGorevEkleTTarih" />
+
+    <TextView
+        android:id="@+id/textViewGorev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="41dp"
+        android:text="Görev"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGorevBaslik" />
+
+    <EditText
+        android:id="@+id/etGorev"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Görev açıklaması"
+        android:inputType="textMultiLine"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewGorev"
+        app:layout_constraintTop_toBottomOf="@+id/etGorevBaslik" />
+
+    <Button
+        android:id="@+id/btnGorevEkle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Kaydet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etGorev" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
