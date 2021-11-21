@@ -81,7 +81,7 @@ public class KovanlarFragment extends Fragment {
             }
         });
     }
-
+//kdsljfkldjlkgd
     private void setKovanSayi(){
 
         long count = new KovanlarDAO().getCountKovan(db);
