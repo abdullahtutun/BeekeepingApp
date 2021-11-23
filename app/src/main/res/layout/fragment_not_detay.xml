@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.NotDetayFragment">
+    android:background="@color/background"
+    android:id="@+id/clNotEkle"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textViewNotTarihDetay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Ekleme Tarihi"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvNotTarihDetay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="40dp"
+        android:hint="AA/GG/YYYY"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewNotTarihDetay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNotBaslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="41dp"
+        android:text="Başlık"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNotTarihDetay" />
+
+    <EditText
+        android:id="@+id/etNotBaslikDetay"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Not başlığı"
+        android:inputType="textMultiLine"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewNotBaslik"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotTarihDetay" />
+
+    <TextView
+        android:id="@+id/textViewNot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="41dp"
+        android:text="Not"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNotBaslik" />
+
+    <EditText
+        android:id="@+id/etNotDetay"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Notunuz"
+        android:inputType="textMultiLine"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewNot"
+        app:layout_constraintTop_toBottomOf="@+id/etNotBaslikDetay" />
+
+    <Button
+        android:id="@+id/btnUpdateNot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Güncelle"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNotDetay" />
+
+    <Button
+        android:id="@+id/btnDeleteNot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/deleteButton"
+        android:text="Sil"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateNot" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

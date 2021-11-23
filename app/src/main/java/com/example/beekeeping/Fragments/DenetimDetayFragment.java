@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +61,7 @@ public class DenetimDetayFragment extends Fragment {
     Calendar cal = Calendar.getInstance();
     private String anaAriDurum,hastalikDurum,ilaclamaDurum,kek,surup,diger;
     private Database db;
-    private int denetimId;
+    int denetimId;
     View view;
 
     @Override
@@ -133,13 +134,13 @@ public class DenetimDetayFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                if(checkedId == R.id.rbGoruldu){
+                if(checkedId == R.id.rbGorulduDetay){
                     anaAriDurum = "goruldu";
                 }
-                if(checkedId == R.id.rbGorulmedi){
+                if(checkedId == R.id.rbGorulmediDetay){
                     anaAriDurum = "gorulmedi";
                 }
-                if(checkedId != R.id.rbGoruldu && checkedId != R.id.rbGorulmedi){
+                if(checkedId != R.id.rbGorulduDetay && checkedId != R.id.rbGorulmediDetay){
                     anaAriDurum = "null";
                 }
             }
@@ -152,10 +153,10 @@ public class DenetimDetayFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
-                    case R.id.rbVar:
+                    case R.id.rbVarDetay:
                         hastalikDurum = "var";
                         break;
-                    case R.id.rbYok:
+                    case R.id.rbYokDetay:
                         hastalikDurum = "yok";
                         break;
                 }
@@ -169,10 +170,10 @@ public class DenetimDetayFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
-                    case R.id.rbYapildi:
+                    case R.id.rbYapildiDetay:
                         ilaclamaDurum = "yapildi";
                         break;
-                    case R.id.rbYapilmadi:
+                    case R.id.rbYapilmadiDetay:
                         ilaclamaDurum = "yapilmadi";
                         break;
                 }
@@ -188,16 +189,16 @@ public class DenetimDetayFragment extends Fragment {
         if(!checkBoxKekDetay.isChecked()){
             kek = "false";
         }
-        if(checkBoxKekDetay.isChecked()){
+        if(checkBoxSurupDetay.isChecked()){
             surup = "true";
         }
-        if(!checkBoxKekDetay.isChecked()){
+        if(!checkBoxSurupDetay.isChecked()){
             surup = "false";
         }
-        if(checkBoxKekDetay.isChecked()){
+        if(checkBoxDigerDetay.isChecked()){
             diger = "true";
         }
-        if(!checkBoxKekDetay.isChecked()){
+        if(!checkBoxDigerDetay.isChecked()){
             diger = "false";
         }
     }

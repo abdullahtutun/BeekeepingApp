@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -124,9 +125,26 @@ public class KovanlarDAO {
 
         SQLiteDatabase db = vt.getReadableDatabase();
 
-        long countKovan = DatabaseUtils.queryNumEntries(db,"kovanlar");
+        long count = DatabaseUtils.queryNumEntries(db,"kovanlar");
 
-        return countKovan;
+        return count;
     }
 
+    public long getCountActiveKovan(Database vt){
+
+        SQLiteDatabase db = vt.getReadableDatabase();
+
+        long count = DatabaseUtils.queryNumEntries(db,"kovanlar","kovan_durum =?", new String[]{"Etkin"});
+
+        return count;
+    }
+
+    public long getCountPassiveKovan(Database vt){
+
+        SQLiteDatabase db = vt.getReadableDatabase();
+
+        long count = DatabaseUtils.queryNumEntries(db,"kovanlar","kovan_durum =?", new String[]{"Pasif"});
+
+        return count;
+    }
 }

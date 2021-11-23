@@ -2,9 +2,12 @@ package com.example.beekeeping.Database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
 
 import com.example.beekeeping.Models.GorevModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -16,7 +19,7 @@ public class GorevlerDAO {
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
-        Cursor c = db.rawQuery("select *from gorevler",null);
+        Cursor c = db.rawQuery("select *from gorevler order by eklenme_tarih desc",null);
 
         while (c.moveToNext()){
             GorevModel k = new GorevModel(c.getInt(c.getColumnIndex("id")),c.getString(c.getColumnIndex("tamamlanma_tarih"))
@@ -37,7 +40,7 @@ public class GorevlerDAO {
 
         while (c.moveToNext()){
             GorevModel a = new GorevModel(c.getInt(c.getColumnIndex("id")),c.getString(c.getColumnIndex("eklenme_tarih")),c.getString(c.getColumnIndex("tamamlanma_tarih")),
-                    c.getString(c.getColumnIndex("gorev_baslik")), c.getString(c.getColumnIndex("gorev")));
+                    c.getString(c.getColumnIndex("gorev_baslik")), c.getString(c.getColumnIndex("gorev_icerik")));
             gorevlerArrayListTam.add(a);
         }
         db.close();
@@ -45,14 +48,22 @@ public class GorevlerDAO {
     }
 
 
-    public void deleteGorev(Database vt, int id){
+    public void deleteGorev(Database vt, int id, View v){
 
         SQLiteDatabase db = vt.getWritableDatabase();
-        db.delete("gorevler","id=?",new String[]{String.valueOf(id)});
+
+        long result = db.delete("gorevler","id=?",new String[]{String.valueOf(id)});
+
+        if(result == -1){
+            Snackbar.make(v,"Bir hata oluştu!",Snackbar.LENGTH_SHORT).show();
+        }else{
+            Snackbar.make(v,"Görev başarıyla silindi!",Snackbar.LENGTH_SHORT).show();
+        }
+
         db.close();
     }
 
-    public void addGorev(Database vt,String eklenme_tarih,String tamamlanma_tarih,String gorev_baslik,String gorev){
+    public void addGorev(Database vt, String eklenme_tarih, String tamamlanma_tarih, String gorev_baslik, String gorev, View v){
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
@@ -61,13 +72,20 @@ public class GorevlerDAO {
         cv.put("eklenme_tarih",eklenme_tarih);
         cv.put("tamamlanma_tarih",tamamlanma_tarih);
         cv.put("gorev_baslik",gorev_baslik);
-        cv.put("gorev",gorev);
+        cv.put("gorev_icerik",gorev);
 
-        db.insertOrThrow("gorevler",null,cv);
+        long result = db.insertOrThrow("gorevler",null,cv);
+
+        if(result == -1){
+            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_SHORT).show();
+        }else{
+            Snackbar.make(v,"Görev başarıyla eklendi!",Snackbar.LENGTH_LONG).show();
+        }
+
         db.close();
     }
 
-    public void updateGorev(Database vt,int id,String eklenme_tarih,String tamamlanma_tarih,String gorev_baslik,String gorev){
+    public void updateGorev(Database vt,int id,String eklenme_tarih,String tamamlanma_tarih,String gorev_baslik,String gorev,View v){
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
@@ -76,10 +94,26 @@ public class GorevlerDAO {
         cv.put("eklenme_tarih",eklenme_tarih);
         cv.put("tamamlanma_tarih",tamamlanma_tarih);
         cv.put("gorev_baslik",gorev_baslik);
-        cv.put("gorev",gorev);
+        cv.put("gorev_icerik",gorev);
 
-        db.update("gorevler",cv,"id=?",new String[]{String.valueOf(id)});
+        long result = db.update("gorevler",cv,"id=?",new String[]{String.valueOf(id)});
+
+        if(result == -1){
+            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
+        }else{
+            Snackbar.make(v,"Görev başarıyla güncellendi!",Snackbar.LENGTH_LONG).show();
+        }
+
         db.close();
+    }
+
+    public long getCountGorev(Database vt) {
+
+        SQLiteDatabase db = vt.getReadableDatabase();
+
+        long count = DatabaseUtils.queryNumEntries(db,"gorevler");
+
+        return count;
     }
 
 }

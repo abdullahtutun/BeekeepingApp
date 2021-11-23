@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.KovanlarDAO;
 import com.example.beekeeping.R;
 
 import butterknife.BindView;
@@ -32,6 +34,7 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.btnMGorevEkle) Button btnMGorevEkle;
     @BindView(R.id.btnMNotEkle) Button btnMNotEkle;
     View view;
+    Database db;
 
 
     @Override
@@ -46,6 +49,12 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
         view =  inflater.inflate(R.layout.fragment_arilik, container, false);
 
         ButterKnife.bind(this,view);
+
+        db = new Database(getContext());
+
+        setInfoOnKovanCard();
+
+        //new KovanlarDAO().abc(db);
 
         setListeners();
 
@@ -104,5 +113,17 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
     private void goToNotEkle(View view){
         NavDirections action = ArilikFragmentDirections.actionArilikToNotEkleFragment();
         Navigation.findNavController(view).navigate(action);
+    }
+
+    private void setInfoOnKovanCard(){
+
+        String countKovan = String.valueOf(new KovanlarDAO().getCountKovan(db));
+        String countActiveKovan = String.valueOf(new KovanlarDAO().getCountActiveKovan(db));
+        String countPassiveKovan = String.valueOf(new KovanlarDAO().getCountPassiveKovan(db));
+
+        tvKovanSayi.setText(countKovan);
+        tvAktifKovan.setText(countActiveKovan);
+        tvPasifKovan.setText(countPassiveKovan);
+
     }
 }

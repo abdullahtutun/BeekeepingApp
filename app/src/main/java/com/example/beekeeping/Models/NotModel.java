@@ -1,6 +1,10 @@
 package com.example.beekeeping.Models;
 
-public class NotModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class NotModel implements Parcelable {
+
     private int id;
     private String not_tarih,not_baslik,not_icerik;
 
@@ -16,6 +20,25 @@ public class NotModel {
         this.not_baslik = not_baslik;
         this.not_icerik = not_icerik;
     }
+
+    protected NotModel(Parcel in) {
+        id = in.readInt();
+        not_tarih = in.readString();
+        not_baslik = in.readString();
+        not_icerik = in.readString();
+    }
+
+    public static final Creator<NotModel> CREATOR = new Creator<NotModel>() {
+        @Override
+        public NotModel createFromParcel(Parcel in) {
+            return new NotModel(in);
+        }
+
+        @Override
+        public NotModel[] newArray(int size) {
+            return new NotModel[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -47,5 +70,18 @@ public class NotModel {
 
     public void setNot_icerik(String not_icerik) {
         this.not_icerik = not_icerik;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(not_tarih);
+        dest.writeString(not_baslik);
+        dest.writeString(not_icerik);
     }
 }

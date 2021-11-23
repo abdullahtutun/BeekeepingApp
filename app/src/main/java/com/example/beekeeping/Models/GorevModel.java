@@ -1,6 +1,9 @@
 package com.example.beekeeping.Models;
 
-public class GorevModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class GorevModel implements Parcelable {
     private int id;
     private String tamamlanma_tarih,gorev_baslik,eklenme_tarih,gorev;
 
@@ -17,6 +20,26 @@ public class GorevModel {
         this.tamamlanma_tarih = tamamlanma_tarih;
         this.gorev_baslik = gorev_baslik;
     }
+
+    protected GorevModel(Parcel in) {
+        id = in.readInt();
+        tamamlanma_tarih = in.readString();
+        gorev_baslik = in.readString();
+        eklenme_tarih = in.readString();
+        gorev = in.readString();
+    }
+
+    public static final Creator<GorevModel> CREATOR = new Creator<GorevModel>() {
+        @Override
+        public GorevModel createFromParcel(Parcel in) {
+            return new GorevModel(in);
+        }
+
+        @Override
+        public GorevModel[] newArray(int size) {
+            return new GorevModel[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -58,5 +81,18 @@ public class GorevModel {
         this.gorev = gorev;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(tamamlanma_tarih);
+        dest.writeString(gorev_baslik);
+        dest.writeString(eklenme_tarih);
+        dest.writeString(gorev);
+    }
 }
 

@@ -2,21 +2,24 @@ package com.example.beekeeping.Database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
 
 import com.example.beekeeping.Models.NotModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
 public class NotlarDAO {
 
-    public ArrayList<NotModel> notlarıGetir(Database vt){
+    public ArrayList<NotModel> getNotlar(Database vt){
 
         ArrayList<NotModel> notlarArrayList = new ArrayList<>();
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
-        Cursor c = db.rawQuery("select *from notlar",null);
+        Cursor c = db.rawQuery("select *from notlar order by not_tarih desc",null);
 
         while (c.moveToNext()){
             NotModel k = new NotModel(c.getInt(c.getColumnIndex("id")),c.getString(c.getColumnIndex("not_tarih"))
@@ -27,7 +30,7 @@ public class NotlarDAO {
         return notlarArrayList;
     }
 
-    public ArrayList<NotModel> notlarıGetirTam(Database vt){
+    public ArrayList<NotModel> getNotlarAll(Database vt){
 
         ArrayList<NotModel> notlarArrayListTam = new ArrayList<>();
 
@@ -44,14 +47,20 @@ public class NotlarDAO {
         return notlarArrayListTam;
     }
 
-    public void notSil(Database vt, int id){
+    public void deleteNot(Database vt, int id,View v){
 
         SQLiteDatabase db = vt.getWritableDatabase();
-        db.delete("notlar","id=?",new String[]{String.valueOf(id)});
+        long result = db.delete("notlar","id=?",new String[]{String.valueOf(id)});
+
+        if(result == -1){
+            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
+        }else{
+            Snackbar.make(v,"Not başarıyla silindi!",Snackbar.LENGTH_LONG).show();
+        }
         db.close();
     }
 
-    public void notEkle(Database vt,String not_tarih,String not_baslik,String not_icerik){
+    public void addNot(Database vt,String not_tarih,String not_baslik,String not_icerik, View v){
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
@@ -61,11 +70,18 @@ public class NotlarDAO {
         cv.put("not_baslik",not_baslik);
         cv.put("not_icerik",not_icerik);
 
-        db.insertOrThrow("notlar",null,cv);
+        long result = db.insertOrThrow("notlar",null,cv);
+
+        if(result == -1){
+            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
+        }else{
+            Snackbar.make(v,"Not başarıyla eklendi!",Snackbar.LENGTH_LONG).show();
+        }
+
         db.close();
     }
 
-    public void notGuncelle(Database vt,int id,String not_tarih,String not_baslik,String not_icerik){
+    public void updateNot(Database vt, int id, String not_tarih, String not_baslik, String not_icerik, View v){
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
@@ -75,8 +91,24 @@ public class NotlarDAO {
         cv.put("not_baslik",not_baslik);
         cv.put("not_icerik",not_icerik);
 
-        db.update("notlar",cv,"id=?",new String[]{String.valueOf(id)});
+       long result = db.update("notlar",cv,"id=?",new String[]{String.valueOf(id)});
+
+        if(result == -1){
+            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
+        }else{
+            Snackbar.make(v,"Not başarıyla güncellendi!",Snackbar.LENGTH_LONG).show();
+        }
+
         db.close();
+    }
+
+    public long getCountNot(Database vt) {
+
+        SQLiteDatabase db = vt.getReadableDatabase();
+
+        long count = DatabaseUtils.queryNumEntries(db,"notlar");
+
+        return count;
     }
 
 }

@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/etNotTarih"
+        android:id="@+id/tvNotTarih"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="95dp"
@@ -62,7 +62,7 @@
         android:inputType="textMultiLine"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/textViewNotBaslik"
-        app:layout_constraintTop_toBottomOf="@+id/etNotTarih" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNotTarih" />
 
     <TextView
         android:id="@+id/textViewNot"

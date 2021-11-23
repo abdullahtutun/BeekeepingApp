@@ -135,7 +135,13 @@
     <fragment
         android:id="@+id/gorevDetayFragment"
         android:name="com.example.beekeeping.Fragments.GorevDetayFragment"
-        android:label="GorevDetayFragment" />
+        android:label="GorevDetayFragment" >
+        <argument
+            android:name="gorev"
+            app:argType="com.example.beekeeping.Models.GorevModel"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
     <fragment
         android:id="@+id/kovanDetayFragment"
         android:name="com.example.beekeeping.Fragments.KovanDetayFragment"
@@ -157,5 +163,11 @@
         android:id="@+id/notDetayFragment"
         android:name="com.example.beekeeping.Fragments.NotDetayFragment"
         android:label="fragment_not_detay"
-        tools:layout="@layout/fragment_not_detay" />
+        tools:layout="@layout/fragment_not_detay" >
+        <argument
+            android:name="not"
+            app:argType="com.example.beekeeping.Models.NotModel"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>
