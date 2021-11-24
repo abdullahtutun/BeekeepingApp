@@ -312,15 +312,15 @@ public class DenetimDetayFragment extends Fragment {
 
             setAnaAriDurum();
 
-            setHastalikDurum();
+            //setHastalikDurum();
 
-            setIlaclamaDurum();
+            //setIlaclamaDurum();
 
-            setKek();
+            //setKek();
 
-            setSurup();
+            //setSurup();
 
-            setDiger();
+            //setDiger();
 
         }
     }

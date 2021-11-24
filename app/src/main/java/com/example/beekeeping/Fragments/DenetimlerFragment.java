@@ -33,6 +33,7 @@ public class DenetimlerFragment extends Fragment {
 
     @BindView(R.id.rvDenetimler) RecyclerView rvDenetimler;
     @BindView(R.id.fabDenetim) FloatingActionButton fabDenetim;
+    @BindView(R.id.tvDenetimSayisi) TextView tvDenetimSayisi;
     private ArrayList<DenetimModel> denetimlerList,denetimlerArrayListAll;
     private DenetimAdapter adapter;
     private Database db;
@@ -67,7 +68,16 @@ public class DenetimlerFragment extends Fragment {
 
         clickedFab();
 
+        setDenetimSayi();
+
         return view;
+    }
+
+    private void setDenetimSayi(){
+
+        long count = new DenetimlerDAO().getCountDenetim(db,kovanNo);
+
+        tvDenetimSayisi.setText(String.valueOf(count));
     }
 
     private void clickedFab(){

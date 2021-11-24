@@ -11,9 +11,6 @@
         android:label="Arılık"
         tools:layout="@layout/fragment_arilik" >
         <action
-            android:id="@+id/action_arilik_to_denetimEkleFragment"
-            app:destination="@id/denetimEkleFragment" />
-        <action
             android:id="@+id/action_arilik_to_gorevEkleFragment"
             app:destination="@id/gorevEkleFragment" />
         <action
@@ -22,9 +19,6 @@
         <action
             android:id="@+id/action_arilik_to_kovanlar"
             app:destination="@id/kovanlar" />
-        <action
-            android:id="@+id/action_arilik_to_denetimler"
-            app:destination="@id/denetimler" />
         <action
             android:id="@+id/action_arilik_to_gorevler"
             app:destination="@id/gorevler" />

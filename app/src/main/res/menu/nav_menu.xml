@@ -9,10 +9,6 @@
         android:title="Kovanlar"
         android:icon="@drawable/ic_hive"/>
     <item
-        android:id="@+id/denetimler"
-        android:title="Denetimler"
-        android:icon="@drawable/ic_control"/>
-    <item
         android:id="@+id/gorevler"
         android:title="Görevler"
         android:icon="@drawable/ic_tasks"/>
