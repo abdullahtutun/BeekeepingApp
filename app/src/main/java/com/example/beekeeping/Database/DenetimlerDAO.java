@@ -164,6 +164,9 @@ public class DenetimlerDAO {
 
         cursor.close();
 
+        db.close();
+
+
         return count;
     }
 }

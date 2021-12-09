@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/mainHeader"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:background="@color/purple_200"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:backgroundTint="@color/card_background"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:elevation="20dp"
             android:foreground="?android:attr/selectableItemBackground"
@@ -177,22 +178,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="38dp"
                     android:textColor="@color/black"
-                    android:text="Bekleyen görevler       :"
+                    android:text="Toplam görev :"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@+id/imageGorevler"
                     app:layout_constraintTop_toBottomOf="@+id/tvGorevler" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Süresi geçen görevler:"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toEndOf="@+id/imageGorevler"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
                 <Button
                     android:id="@+id/btnMGorevEkle"
@@ -207,24 +198,16 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvBGorevSayisi"
+                    android:id="@+id/tvGorevToplam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="38dp"
                     android:text="TextView"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@+id/textView16"
                     app:layout_constraintTop_toBottomOf="@+id/tvGorevler" />
 
-                <TextView
-                    android:id="@+id/tvSGGorevSayisi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="12dp"
-                    android:text="TextView"
-                    app:layout_constraintStart_toEndOf="@+id/textView17"
-                    app:layout_constraintTop_toBottomOf="@+id/tvBGorevSayisi" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -280,22 +263,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="38dp"
                     android:textColor="@color/black"
-                    android:text="Son notun başlığı :"
+                    android:text="Toplam not :"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@+id/imageNotlar"
                     app:layout_constraintTop_toBottomOf="@+id/tvNotlar" />
 
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/black"
-                    android:text="Eklenme tarihi       :"
-                    app:layout_constraintStart_toEndOf="@+id/imageNotlar"
-                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
                 <Button
                     android:id="@+id/btnMNotEkle"
@@ -310,24 +284,17 @@
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
-                    android:id="@+id/tvSNotBasligi"
+                    android:id="@+id/tvNotToplam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginTop="38dp"
                     android:text="TextView"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toEndOf="@+id/textView19"
                     app:layout_constraintTop_toBottomOf="@+id/tvNotlar" />
 
-                <TextView
-                    android:id="@+id/tvNotEklenmeTarihi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="9dp"
-                    android:text="TextView"
-                    app:layout_constraintStart_toEndOf="@+id/textView20"
-                    app:layout_constraintTop_toBottomOf="@+id/tvSNotBasligi" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -19,7 +19,7 @@ public class GorevlerDAO {
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
-        Cursor c = db.rawQuery("select *from gorevler order by eklenme_tarih desc",null);
+        Cursor c = db.rawQuery("select *from gorevler order by tamamlanma_tarih asc",null);
 
         while (c.moveToNext()){
             GorevModel k = new GorevModel(c.getInt(c.getColumnIndex("id")),c.getString(c.getColumnIndex("tamamlanma_tarih"))
@@ -67,19 +67,26 @@ public class GorevlerDAO {
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
-        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("select * from gorevler where gorev_baslik =?",new String[]{gorev_baslik});
 
-        cv.put("eklenme_tarih",eklenme_tarih);
-        cv.put("tamamlanma_tarih",tamamlanma_tarih);
-        cv.put("gorev_baslik",gorev_baslik);
-        cv.put("gorev_icerik",gorev);
+        if(cursor.getCount() <= 0){
 
-        long result = db.insertOrThrow("gorevler",null,cv);
+            ContentValues cv = new ContentValues();
 
-        if(result == -1){
-            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_SHORT).show();
+            cv.put("eklenme_tarih",eklenme_tarih);
+            cv.put("tamamlanma_tarih",tamamlanma_tarih);
+            cv.put("gorev_baslik",gorev_baslik);
+            cv.put("gorev_icerik",gorev);
+
+            long result = db.insertOrThrow("gorevler",null,cv);
+
+            if(result == -1){
+                Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_SHORT).show();
+            }else{
+                Snackbar.make(v,"Görev başarıyla eklendi!",Snackbar.LENGTH_LONG).show();
+            }
         }else{
-            Snackbar.make(v,"Görev başarıyla eklendi!",Snackbar.LENGTH_LONG).show();
+            Snackbar.make(v,"Aynı başlığa sahip bir görev var!",Snackbar.LENGTH_LONG).show();
         }
 
         db.close();
@@ -115,5 +122,12 @@ public class GorevlerDAO {
 
         return count;
     }
+
+
+
+
+
+
+
 
 }

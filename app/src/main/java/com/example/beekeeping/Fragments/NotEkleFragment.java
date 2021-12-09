@@ -90,7 +90,7 @@ public class NotEkleFragment extends Fragment {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
 
-                String date = dayOfMonth + "/" + month + "/" + year;
+                String date = dayOfMonth + "." + month + "." + year;
                 tvNotTarih.setText(date);
             }
         };

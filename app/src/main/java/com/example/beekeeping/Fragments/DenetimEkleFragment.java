@@ -84,6 +84,7 @@ public class DenetimEkleFragment extends Fragment {
         String kovanNo = DenetimEkleFragmentArgs.fromBundle(getArguments()).getKovanNo();
 
         etKovan.setText(kovanNo);
+
         setDenetimTarih();
 
         getAnaAriDurum();
@@ -122,7 +123,7 @@ public class DenetimEkleFragment extends Fragment {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
 
-                String date = dayOfMonth + "/" + month + "/" + year;
+                String date = dayOfMonth + "." + month + "." + year;
                 denetimEkleTarih.setText(date);
             }
         };

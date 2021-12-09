@@ -3,6 +3,8 @@ package com.example.beekeeping.Fragments;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -42,7 +44,6 @@ public class DenetimDetayFragment extends Fragment {
     @BindView(R.id.etGunlukCerceveDetay) EditText etGunlukCerceveDetay;
     @BindView(R.id.etLarvaCerceveDetay) EditText etLarvaCerceveDetay;
     @BindView(R.id.etKapaliCerceveDetay) EditText etKapaliCerceveDetay;
-    @BindView(R.id.etGenelGozlemDetay) EditText etGenelGozlemDetay;
     @BindView(R.id.radioGrupAnaAriDetay) RadioGroup radioGrupAnaAriDetay;
     @BindView(R.id.radioGrupHastalikDetay) RadioGroup radioGrupHastalikDetay;
     @BindView(R.id.radioGrupIlaclamaDetay) RadioGroup radioGrupIlaclamaDetay;
@@ -55,22 +56,24 @@ public class DenetimDetayFragment extends Fragment {
     @BindView(R.id.checkBoxKekDetay) CheckBox checkBoxKekDetay;
     @BindView(R.id.checkBoxSurupDetay) CheckBox checkBoxSurupDetay;
     @BindView(R.id.checkBoxDigerDetay) CheckBox checkBoxDigerDetay;
+    @BindView(R.id.etGenelGozlemDetay) EditText etGenelGozlemDetay;
     @BindView(R.id.btnUpdateDenetimDetay) Button btnUpdateDenetimDetay;
     @BindView(R.id.btnDeleteDenetimDetay) Button btnDeleteDenetimDetay;
+    private String anaAriDurum,hastalikDurum,ilaclamaDurum,kek,surup,diger;
     private DatePickerDialog.OnDateSetListener dateSetListener;
     Calendar cal = Calendar.getInstance();
-    private String anaAriDurum,hastalikDurum,ilaclamaDurum,kek,surup,diger;
     private Database db;
-    int denetimId;
     View view;
+    int denetimId;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view =  inflater.inflate(R.layout.fragment_denetim_detay, container, false);
 
@@ -90,12 +93,14 @@ public class DenetimDetayFragment extends Fragment {
 
         getIlaclamaDurum();
 
-        clickedUpdateButton();
 
-        clickedDeleteButton();
+
+        clickedUpdateButton();
 
         return view;
     }
+
+
 
     private void setDenetimTarih(){
 
@@ -126,6 +131,7 @@ public class DenetimDetayFragment extends Fragment {
                 denetimEkleTarihDetay.setText(date);
             }
         };
+
     }
 
     private void getAnaAriDurum(){
@@ -143,6 +149,7 @@ public class DenetimDetayFragment extends Fragment {
                 if(checkedId != R.id.rbGorulduDetay && checkedId != R.id.rbGorulmediDetay){
                     anaAriDurum = "null";
                 }
+
             }
         });
     }
@@ -203,7 +210,7 @@ public class DenetimDetayFragment extends Fragment {
         }
     }
 
-    private void setAnaAriDurum(){
+    private void setAnaAri(){
 
         switch( DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getAna_ari()){
 
@@ -216,17 +223,17 @@ public class DenetimDetayFragment extends Fragment {
         }
     }
 
-    private void setHastalikDurum(){
+    private void setHastalik(){
 
-        switch( DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getHastalik_belirtisi()){
+            switch( DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getHastalik_belirtisi()){
 
-            case "var":
-                rbVarDetay.setChecked(true);
-                break;
-            case "yok":
-                rbYokDetay.setChecked(true);
-                break;
-        }
+                case "var":
+                    rbVarDetay.setChecked(true);
+                    break;
+                case "yok":
+                    rbYokDetay.setChecked(true);
+                    break;
+            }
     }
 
     private void setIlaclamaDurum(){
@@ -285,42 +292,40 @@ public class DenetimDetayFragment extends Fragment {
 
         if(getArguments() != null){
 
-            String kovanNo = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getKovan_no();
-            String tarih = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getDenetim_tarih();
-            String cerceveSayisi = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getCerceve_sayisi());
-            String ariliCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getArili_cerceve());
-            String balliCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getBalli_cerceve());
-            String kabarikCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getKabarik_cerceve());
-            String hamCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getHam_cerceve());
-            String gunlukCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getGunluk_cerceve());
-            String larvaCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getLarva_cerceve());
-            String kapaliCerceve = String.valueOf(DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getKapali_cerceve());
-            String gozlem = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getGenel_gozlem();
+            String kovan = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getKovan_no();
+            String denetimEkleTarih = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getDenetim_tarih();
+            String CerceveSayisi = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getCerceve_sayisi();
+            String AriliCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getArili_cerceve();
+            String BalliCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getBalli_cerceve();
+            String KabarikCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getKabarik_cerceve();
+            String HamCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getHam_cerceve();
+            String GunlukCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getGunluk_cerceve();
+            String LarvaCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getLarva_cerceve();
+            String KapaliCerceve = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getKapali_cerceve();
+            String GenelGozlem = DenetimDetayFragmentArgs.fromBundle(getArguments()).getDenetim().getGenel_gozlem();
 
+            etKovanDetay.setText(kovan);
+            denetimEkleTarihDetay.setText(denetimEkleTarih);
+            etCerceveSayisiDetay.setText(CerceveSayisi);
+            etAriliCerceveDetay.setText(AriliCerceve);
+            etBalliCerceveDetay.setText(BalliCerceve);
+            etKabarikCerceveDetay.setText(KabarikCerceve);
+            etHamCerceveDetay.setText(HamCerceve);
+            etGunlukCerceveDetay.setText(GunlukCerceve);
+            etLarvaCerceveDetay.setText(LarvaCerceve);
+            etKapaliCerceveDetay.setText(KapaliCerceve);
+            etGenelGozlemDetay.setText(GenelGozlem);
 
-            etKovanDetay.setText(kovanNo);
-            denetimEkleTarihDetay.setText(tarih);
-            etCerceveSayisiDetay.setText(cerceveSayisi);
-            etAriliCerceveDetay.setText(ariliCerceve);
-            etBalliCerceveDetay.setText(balliCerceve);
-            etKabarikCerceveDetay.setText(kabarikCerceve);
-            etHamCerceveDetay.setText(hamCerceve);
-            etGunlukCerceveDetay.setText(gunlukCerceve);
-            etLarvaCerceveDetay.setText(larvaCerceve);
-            etKapaliCerceveDetay.setText(kapaliCerceve);
-            etGenelGozlemDetay.setText(gozlem);
+            //setAnaAri();
 
-            setAnaAriDurum();
-
-            //setHastalikDurum();
+            //setHastalik();
 
             //setIlaclamaDurum();
 
-            //setKek();
+            setKek();
+            setSurup();
+            setDiger();
 
-            //setSurup();
-
-            //setDiger();
 
         }
     }
@@ -345,13 +350,21 @@ public class DenetimDetayFragment extends Fragment {
 
                 getBesleme();
 
-                new DenetimlerDAO().updateDenetim(db,denetimId,kovanNo,denetimTarih,cerceveSayi,ariliCerceveSayi,balliCerceveSayi,kabarikCerceveSayi,hamCerceveSayi,anaAriDurum,
-                        gunlukCerceveSayi,larvaCerceveSayi,kapaliCerceveSayi,kek,surup,diger,hastalikDurum,ilaclamaDurum,genelGozlem,v);
+                new DenetimlerDAO().updateDenetim(db,denetimId,kovanNo,denetimTarih,cerceveSayi,
+                        ariliCerceveSayi,balliCerceveSayi,kabarikCerceveSayi,
+                        hamCerceveSayi,anaAriDurum,gunlukCerceveSayi,larvaCerceveSayi,
+                        kapaliCerceveSayi,kek,surup,diger,hastalikDurum,ilaclamaDurum,genelGozlem,v);
+
+                Log.i("kek",kek);
+                Log.i("surup",surup);
+                Log.i("diger",diger);
             }
         });
+
+
     }
 
-    private void clickedDeleteButton(){
+    /*private void clickedDeleteButton(){
 
         btnDeleteDenetimDetay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -371,5 +384,5 @@ public class DenetimDetayFragment extends Fragment {
 
             }
         });
-    }
+    } */
 }

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.GorevlerDAO;
 import com.example.beekeeping.Database.KovanlarDAO;
+import com.example.beekeeping.Database.NotlarDAO;
 import com.example.beekeeping.R;
 
 import butterknife.BindView;
@@ -27,10 +30,8 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.tvKovanSayi) TextView tvKovanSayi;
     @BindView(R.id.tvAktifKovan) TextView tvAktifKovan;
     @BindView(R.id.tvPasifKovan) TextView tvPasifKovan;
-    @BindView(R.id.tvBGorevSayisi) TextView tvBGorevSayisi;
-    @BindView(R.id.tvSGGorevSayisi) TextView tvSGGorevSayisi;
-    @BindView(R.id.tvSNotBasligi) TextView tvSNotBasligi;
-    @BindView(R.id.tvNotEklenmeTarihi) TextView tvNotEklenmeTarihi;
+    @BindView(R.id.tvGorevToplam) TextView tvGorevToplam;
+    @BindView(R.id.tvNotToplam) TextView tvNotToplam;
     @BindView(R.id.btnMGorevEkle) Button btnMGorevEkle;
     @BindView(R.id.btnMNotEkle) Button btnMNotEkle;
     View view;
@@ -52,11 +53,10 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
 
         db = new Database(getContext());
 
-        setInfoOnKovanCard();
-
-        //new KovanlarDAO().abc(db);
+        setInfo();
 
         setListeners();
+
 
         return view;
     }
@@ -115,7 +115,15 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
         Navigation.findNavController(view).navigate(action);
     }
 
-    private void setInfoOnKovanCard(){
+    private void setInfo(){
+
+        setInfoKovanCard();
+
+        setInfoGorevCard();
+
+        setInfoNotCard();
+    }
+    private void setInfoKovanCard(){
 
         String countKovan = String.valueOf(new KovanlarDAO().getCountKovan(db));
         String countActiveKovan = String.valueOf(new KovanlarDAO().getCountActiveKovan(db));
@@ -124,6 +132,20 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
         tvKovanSayi.setText(countKovan);
         tvAktifKovan.setText(countActiveKovan);
         tvPasifKovan.setText(countPassiveKovan);
-
     }
+
+    private void setInfoGorevCard(){
+
+        String countGorev = String.valueOf(new GorevlerDAO().getCountGorev(db));
+
+        tvGorevToplam.setText(countGorev);
+    }
+
+    private void setInfoNotCard(){
+
+        String countGorev = String.valueOf(new NotlarDAO().getCountNot(db));
+
+        tvNotToplam.setText(countGorev);
+    }
+
 }

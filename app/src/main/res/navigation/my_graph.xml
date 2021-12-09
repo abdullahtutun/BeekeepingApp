@@ -25,6 +25,12 @@
         <action
             android:id="@+id/action_arilik_to_notlar"
             app:destination="@id/notlar" />
+        <action
+            android:id="@+id/action_arilik_to_rehber"
+            app:destination="@id/rehber" />
+        <action
+            android:id="@+id/action_arilik_to_yonetmelik"
+            app:destination="@id/yonetmelik" />
     </fragment>
     <fragment
         android:id="@+id/kovanlar"
@@ -164,4 +170,14 @@
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
+    <fragment
+        android:id="@+id/rehber"
+        android:name="com.example.beekeeping.Fragments.RehberFragment"
+        android:label="Rehber"
+        tools:layout="@layout/fragment_rehber" />
+    <fragment
+        android:id="@+id/yonetmelik"
+        android:name="com.example.beekeeping.Fragments.YonetmelikFragment"
+        android:label="Yönetmelik"
+        tools:layout="@layout/fragment_yonetmelik" />
 </navigation>

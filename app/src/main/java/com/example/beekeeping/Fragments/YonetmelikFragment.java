@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.beekeeping.R;
+import com.github.barteksc.pdfviewer.PDFView;
 
 public class YonetmelikFragment extends Fragment {
 View view;
@@ -21,6 +22,10 @@ View view;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_yonetmelik, container, false);
+
+        PDFView pdfView = view.findViewById(R.id.pdfviewYonetmelik);
+
+        pdfView.fromAsset("yonetmelik.pdf").load();
 
         return view;
     }
