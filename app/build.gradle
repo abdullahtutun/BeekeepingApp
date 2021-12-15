@@ -61,4 +61,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    implementation 'com.koushikdutta.ion:ion:3.0.8'
 }

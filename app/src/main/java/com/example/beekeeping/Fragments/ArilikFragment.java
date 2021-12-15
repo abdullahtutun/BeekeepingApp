@@ -1,5 +1,6 @@
 package com.example.beekeeping.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.beekeeping.Activities.WeatherActivity;
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Database.GorevlerDAO;
 import com.example.beekeeping.Database.KovanlarDAO;
@@ -24,6 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ArilikFragment extends Fragment implements View.OnClickListener {
+    @BindView(R.id.cardHavaDurumu) CardView cardHavaDurumu;
+    @BindView(R.id.cardTakvim) CardView cardTakvim;
     @BindView(R.id.cardKovanlar) CardView cardKovanlar;
     @BindView(R.id.cardGorevler) CardView cardGorevler;
     @BindView(R.id.cardNotlar) CardView cardNotlar;
@@ -62,6 +66,8 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
     }
 
     public void setListeners(){
+        cardHavaDurumu.setOnClickListener(this);
+        cardTakvim.setOnClickListener(this);
         cardKovanlar.setOnClickListener(this);
         cardGorevler.setOnClickListener(this);
         cardNotlar.setOnClickListener(this);
@@ -72,6 +78,13 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
+            case R.id.cardHavaDurumu:
+                goToHavaDurumu();
+                break;
+            case R.id.cardTakvim:
+                goToKovanlar(v);
+                break;
             case R.id.cardKovanlar:
                 goToKovanlar(v);
                 break;
@@ -90,6 +103,10 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private void goToHavaDurumu(){
+        Intent intent =new Intent(ArilikFragment.this.getActivity(), WeatherActivity.class);
+        startActivity(intent);
+    }
     private void goToKovanlar(View view){
         NavDirections action = ArilikFragmentDirections.actionArilikToKovanlar();
         Navigation.findNavController(view).navigate(action);

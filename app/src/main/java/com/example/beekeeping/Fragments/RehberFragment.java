@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.beekeeping.R;
+import com.github.barteksc.pdfviewer.PDFView;
 
 public class RehberFragment extends Fragment {
     View view;
@@ -20,6 +21,10 @@ public class RehberFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_rehber, container, false);
+
+        PDFView pdfView = view.findViewById(R.id.pdfviewRehber);
+
+        pdfView.fromAsset("rehber.pdf").load();
 
         return view;
     }

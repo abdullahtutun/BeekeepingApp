@@ -64,19 +64,29 @@ public class NotlarDAO {
 
         SQLiteDatabase db = vt.getWritableDatabase();
 
-        ContentValues cv = new ContentValues();
+        Cursor cursor = db.rawQuery("select * from notlar where not_baslik =?",new String[]{not_baslik});
 
-        cv.put("not_tarih",not_tarih);
-        cv.put("not_baslik",not_baslik);
-        cv.put("not_icerik",not_icerik);
+        if(cursor.getCount() <= 0){
 
-        long result = db.insertOrThrow("notlar",null,cv);
+            ContentValues cv = new ContentValues();
 
-        if(result == -1){
-            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
-        }else{
-            Snackbar.make(v,"Not başarıyla eklendi!",Snackbar.LENGTH_LONG).show();
+            cv.put("not_tarih",not_tarih);
+            cv.put("not_baslik",not_baslik);
+            cv.put("not_icerik",not_icerik);
+
+            long result = db.insertOrThrow("notlar",null,cv);
+
+            if(result == -1){
+                Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
+            }else{
+                Snackbar.make(v,"Not başarıyla eklendi!",Snackbar.LENGTH_LONG).show();
+            }
         }
+        else{
+            Snackbar.make(v,"Aynı başlığa sahip bir not var!",Snackbar.LENGTH_LONG).show();
+        }
+
+
 
         db.close();
     }
