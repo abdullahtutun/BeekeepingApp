@@ -188,7 +188,6 @@
         android:layout_marginTop="92dp"
         android:backgroundTint="@color/button"
         android:text="Güncelle"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etKovanNotDetay" />

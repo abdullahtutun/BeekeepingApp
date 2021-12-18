@@ -11,7 +11,9 @@
     <color name="background">#ffffe0</color>
     <color name="card_header">#b2ec5d</color>
     <color name="card_background">#E8F48C</color>
-    <color name="button">#CCFF99</color>
+    <color name="button">#1c39bb</color>
     <color name="deleteButton">#ff7575</color>
     <color name="aboveSection">#ffff6b</color>
+    <color name="calendar">#ace5ee</color>
+    <color name="calendarTop">#1e90ff</color>
 </resources>

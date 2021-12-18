@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_arilik_to_yonetmelik"
             app:destination="@id/yonetmelik" />
+        <action
+            android:id="@+id/action_arilik_to_takvimFragment"
+            app:destination="@id/takvimFragment" />
     </fragment>
     <fragment
         android:id="@+id/kovanlar"
@@ -180,4 +183,8 @@
         android:name="com.example.beekeeping.Fragments.YonetmelikFragment"
         android:label="Yönetmelik"
         tools:layout="@layout/fragment_yonetmelik" />
+    <fragment
+        android:id="@+id/takvimFragment"
+        android:name="com.example.beekeeping.Fragments.TakvimFragment"
+        android:label="TakvimFragment" />
 </navigation>

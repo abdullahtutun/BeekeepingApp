@@ -5,10 +5,13 @@
       <map>
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/background_button.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/border_edittext.xml" value="0.3828125" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/grid_border.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_add.xml" value="0.3828125" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_back.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_book.xml" value="0.2703125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_calendar.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_control.xml" value="0.2703125" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_forward.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_honey.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_list.xml" value="0.3828125" />
@@ -19,10 +22,13 @@
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_notebook.xml" value="0.2703125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_open_book.xml" value="0.2703125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_tasks.xml" value="0.3828125" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_watch.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/ic_weather.xml" value="0.2703125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/drawable/style_row.xml" value="0.3828125" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/activity_main.xml" value="0.23796296296296296" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/activity_weather.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/add_newevent_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/calendar_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/denetim_row.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_arilik.xml" value="0.33" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_denetim_detay.xml" value="0.36666666666666664" />
@@ -38,6 +44,7 @@
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_not_ekle.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_notlar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_rehber.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_takvim.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_weather.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/fragment_yonetmelik.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/item_weather.xml" value="0.36666666666666664" />
@@ -47,6 +54,9 @@
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/row_gorev.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/row_kovan.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/row_not.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/show_events_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/show_events_rowlayout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/layout/single_cell_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tutun/AndroidStudioProjects/Beekeeping/app/src/main/res/menu/toolbar_menu.xml" value="0.25416666666666665" />
       </map>

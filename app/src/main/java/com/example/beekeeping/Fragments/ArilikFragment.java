@@ -83,7 +83,7 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
                 goToHavaDurumu();
                 break;
             case R.id.cardTakvim:
-                goToKovanlar(v);
+                goToTakvim(v);
                 break;
             case R.id.cardKovanlar:
                 goToKovanlar(v);
@@ -106,6 +106,11 @@ public class ArilikFragment extends Fragment implements View.OnClickListener {
     private void goToHavaDurumu(){
         Intent intent =new Intent(ArilikFragment.this.getActivity(), WeatherActivity.class);
         startActivity(intent);
+    }
+
+    private void goToTakvim(View view){
+        NavDirections action = ArilikFragmentDirections.actionArilikToTakvimFragment();
+        Navigation.findNavController(view).navigate(action);
     }
     private void goToKovanlar(View view){
         NavDirections action = ArilikFragmentDirections.actionArilikToKovanlar();

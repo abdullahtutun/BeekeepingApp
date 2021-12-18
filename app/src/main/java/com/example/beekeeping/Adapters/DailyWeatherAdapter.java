@@ -54,8 +54,10 @@ public class DailyWeatherAdapter extends ArrayAdapter<Weather> {
                 .load("http://openweathermap.org/img/w/" + weather.getIcon() + ".png")
                 .intoImageView(iconWeather);
 
+
+
         Date date = new Date(weather.getDate()*1000);
-        DateFormat dateFormat = new SimpleDateFormat("EEE, MMM yy", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM", Locale.forLanguageTag("tr"));
         dateFormat.setTimeZone(TimeZone.getTimeZone(weather.getTimeZone()));
         tvDate.setText(dateFormat.format(date));
 
