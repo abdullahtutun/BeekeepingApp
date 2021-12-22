@@ -123,7 +123,7 @@ public class DenetimEkleFragment extends Fragment {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
 
-                String date = dayOfMonth + "." + month + "." + year;
+                String date = dayOfMonth + "/" + month + "/" + year;
                 denetimEkleTarih.setText(date);
             }
         };
@@ -135,19 +135,6 @@ public class DenetimEkleFragment extends Fragment {
         radioGrupAnaAri.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                /*if (x == -1) {
-                    anaAriDurum ="a";
-                }else{
-                    switch (checkedId){
-                        case R.id.rbGoruldu:
-                            anaAriDurum = "goruldu";
-                            break;
-                        case R.id.rbGorulmedi:
-                            anaAriDurum = "gorulmedi";
-                            break;
-                    }
-                } */
 
                 if(checkedId == R.id.rbGoruldu){
                     anaAriDurum = "goruldu";

@@ -117,42 +117,6 @@ public class DenetimlerDAO {
         db.close();
     }
 
-    public void updateDenetim(@NonNull Database vt, int id, String kovan_no, String denetim_tarih, String cerceve_sayisi, String arili_cerceve, String balli_cerceve,
-                              String kabarik_cerceve, String ham_cerceve, String ana_ari, String gunluk_cerceve, String larva_cerceve, String kapali_cerceve, String kek,
-                              String surup, String diger, String hastalik_belirtisi, String ilaclama, String genel_gozlem,View v){
-
-        SQLiteDatabase db = vt.getWritableDatabase();
-
-        ContentValues cv = new ContentValues();
-
-        cv.put("kovan_no",kovan_no);
-        cv.put("denetim_tarih",denetim_tarih);
-        cv.put("cerceve_sayisi",cerceve_sayisi);
-        cv.put("arili_cerceve",arili_cerceve);
-        cv.put("balli_cerceve",balli_cerceve);
-        cv.put("kabarik_cerceve",kabarik_cerceve);
-        cv.put("ham_cerceve",ham_cerceve);
-        cv.put("ana_ari",ana_ari);
-        cv.put("gunluk_cerceve",gunluk_cerceve);
-        cv.put("larva_cerceve",larva_cerceve);
-        cv.put("kapali_cerceve",kapali_cerceve);
-        cv.put("kek",kek);
-        cv.put("surup",surup);
-        cv.put("diger",diger);
-        cv.put("hastalik_belirtisi",hastalik_belirtisi);
-        cv.put("ilaclama",ilaclama);
-        cv.put("genel_gozlem",genel_gozlem);
-
-        long result = db.update("denetimler",cv,"id=?",new String[]{String.valueOf(id)});
-
-        if(result == -1){
-            Snackbar.make(v,"Bir hata oluştu",Snackbar.LENGTH_LONG).show();
-        }else{
-            Snackbar.make(v,"Denetim başarıyla güncellendi!",Snackbar.LENGTH_LONG).show();
-        }
-        db.close();
-    }
-
     public int getCountDenetim(@NonNull Database vt, String kovanNo) {
 
         String countQuery = "SELECT  * FROM denetimler where kovan_no ="+kovanNo ;

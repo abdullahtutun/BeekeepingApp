@@ -36,9 +36,12 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.drawerLayout) DrawerLayout drawerLayout;
-    @BindView(R.id.navigationView) NavigationView navigationView;
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.drawerLayout)
+    DrawerLayout drawerLayout;
+    @BindView(R.id.navigationView)
+    NavigationView navigationView;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
     NavController navController;
     ActionBarDrawerToggle toggle;
 
@@ -61,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         createNavHeader();
 
     }
-
 
     @Override
     public void onUserInteraction() {

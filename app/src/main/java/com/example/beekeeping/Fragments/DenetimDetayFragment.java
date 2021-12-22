@@ -57,9 +57,7 @@ public class DenetimDetayFragment extends Fragment {
     @BindView(R.id.checkBoxSurupDetay) CheckBox checkBoxSurupDetay;
     @BindView(R.id.checkBoxDigerDetay) CheckBox checkBoxDigerDetay;
     @BindView(R.id.etGenelGozlemDetay) EditText etGenelGozlemDetay;
-    @BindView(R.id.btnUpdateDenetimDetay) Button btnUpdateDenetimDetay;
     @BindView(R.id.btnDeleteDenetimDetay) Button btnDeleteDenetimDetay;
-    private String anaAriDurum,hastalikDurum,ilaclamaDurum,kek,surup,diger;
     private DatePickerDialog.OnDateSetListener dateSetListener;
     Calendar cal = Calendar.getInstance();
     private Database db;
@@ -87,20 +85,10 @@ public class DenetimDetayFragment extends Fragment {
 
         setData();
 
-        getAnaAriDurum();
-
-        getHastalikDurum();
-
-        getIlaclamaDurum();
-
-
-
-        clickedUpdateButton();
+        clickedDeleteButton();
 
         return view;
     }
-
-
 
     private void setDenetimTarih(){
 
@@ -132,82 +120,6 @@ public class DenetimDetayFragment extends Fragment {
             }
         };
 
-    }
-
-    private void getAnaAriDurum(){
-
-        radioGrupAnaAriDetay.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                if(checkedId == R.id.rbGorulduDetay){
-                    anaAriDurum = "goruldu";
-                }
-                if(checkedId == R.id.rbGorulmediDetay){
-                    anaAriDurum = "gorulmedi";
-                }
-                if(checkedId != R.id.rbGorulduDetay && checkedId != R.id.rbGorulmediDetay){
-                    anaAriDurum = "null";
-                }
-
-            }
-        });
-    }
-
-    private void getHastalikDurum(){
-
-        radioGrupHastalikDetay.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.rbVarDetay:
-                        hastalikDurum = "var";
-                        break;
-                    case R.id.rbYokDetay:
-                        hastalikDurum = "yok";
-                        break;
-                }
-            }
-        });
-    }
-
-    private void getIlaclamaDurum(){
-
-        radioGrupIlaclamaDetay.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.rbYapildiDetay:
-                        ilaclamaDurum = "yapildi";
-                        break;
-                    case R.id.rbYapilmadiDetay:
-                        ilaclamaDurum = "yapilmadi";
-                        break;
-                }
-            }
-        });
-    }
-
-    private void getBesleme(){
-
-        if(checkBoxKekDetay.isChecked()){
-            kek = "true";
-        }
-        if(!checkBoxKekDetay.isChecked()){
-            kek = "false";
-        }
-        if(checkBoxSurupDetay.isChecked()){
-            surup = "true";
-        }
-        if(!checkBoxSurupDetay.isChecked()){
-            surup = "false";
-        }
-        if(checkBoxDigerDetay.isChecked()){
-            diger = "true";
-        }
-        if(!checkBoxDigerDetay.isChecked()){
-            diger = "false";
-        }
     }
 
     private void setAnaAri(){
@@ -316,11 +228,11 @@ public class DenetimDetayFragment extends Fragment {
             etKapaliCerceveDetay.setText(KapaliCerceve);
             etGenelGozlemDetay.setText(GenelGozlem);
 
-            //setAnaAri();
+            setAnaAri();
 
-            //setHastalik();
+            setHastalik();
 
-            //setIlaclamaDurum();
+            setIlaclamaDurum();
 
             setKek();
             setSurup();
@@ -330,41 +242,7 @@ public class DenetimDetayFragment extends Fragment {
         }
     }
 
-    private void clickedUpdateButton(){
-
-        btnUpdateDenetimDetay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String denetimTarih = denetimEkleTarihDetay.getText().toString().trim();
-                String kovanNo = etKovanDetay.getText().toString().trim();
-                String cerceveSayi = etCerceveSayisiDetay.getText().toString().trim();
-                String ariliCerceveSayi = etAriliCerceveDetay.getText().toString().trim();
-                String balliCerceveSayi = etBalliCerceveDetay.getText().toString().trim();
-                String kabarikCerceveSayi = etKabarikCerceveDetay.getText().toString().trim();
-                String hamCerceveSayi = etHamCerceveDetay.getText().toString().trim();
-                String gunlukCerceveSayi = etGunlukCerceveDetay.getText().toString().trim();
-                String larvaCerceveSayi = etLarvaCerceveDetay.getText().toString().trim();
-                String kapaliCerceveSayi = etKapaliCerceveDetay.getText().toString().trim();
-                String genelGozlem = etGenelGozlemDetay.getText().toString().trim();
-
-                getBesleme();
-
-                new DenetimlerDAO().updateDenetim(db,denetimId,kovanNo,denetimTarih,cerceveSayi,
-                        ariliCerceveSayi,balliCerceveSayi,kabarikCerceveSayi,
-                        hamCerceveSayi,anaAriDurum,gunlukCerceveSayi,larvaCerceveSayi,
-                        kapaliCerceveSayi,kek,surup,diger,hastalikDurum,ilaclamaDurum,genelGozlem,v);
-
-                Log.i("kek",kek);
-                Log.i("surup",surup);
-                Log.i("diger",diger);
-            }
-        });
-
-
-    }
-
-    /*private void clickedDeleteButton(){
+    private void clickedDeleteButton(){
 
         btnDeleteDenetimDetay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -384,5 +262,5 @@ public class DenetimDetayFragment extends Fragment {
 
             }
         });
-    } */
+    }
 }

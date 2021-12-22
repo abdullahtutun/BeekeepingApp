@@ -25,7 +25,4 @@
         android:title="Arıcılık Yönetmeliği"
         android:icon="@drawable/ic_literature"/>
 
-    <item android:id="@+id/bizeUlasin"
-        android:title="Bize Ulaşın"
-        android:icon="@drawable/ic_contact_us"/>
 </menu>

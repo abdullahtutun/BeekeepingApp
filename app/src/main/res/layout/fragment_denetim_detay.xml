@@ -551,31 +551,19 @@
             app:layout_constraintTop_toBottomOf="@+id/tvGGorunumDetay" />
 
         <Button
-            android:id="@+id/btnUpdateDenetimDetay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Güncelle"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etGenelGozlemDetay"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <Button
             android:id="@+id/btnDeleteDenetimDetay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="@color/deleteButton"
             android:text="Sil"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnUpdateDenetimDetay" />
+            app:layout_constraintTop_toBottomOf="@+id/etGenelGozlemDetay"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
