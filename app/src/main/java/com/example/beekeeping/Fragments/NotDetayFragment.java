@@ -16,9 +16,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.beekeeping.Database.Database;
-import com.example.beekeeping.Database.DenetimlerDAO;
-import com.example.beekeeping.Database.GorevlerDAO;
-import com.example.beekeeping.Database.KovanlarDAO;
 import com.example.beekeeping.Database.NotlarDAO;
 import com.example.beekeeping.R;
 import com.google.android.material.snackbar.Snackbar;

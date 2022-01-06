@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Fragments.GorevlerFragmentDirections;
-import com.example.beekeeping.Fragments.KovanlarFragmentDirections;
 import com.example.beekeeping.Models.GorevModel;
-import com.example.beekeeping.Models.KovanModel;
 import com.example.beekeeping.R;
 
 import java.util.ArrayList;

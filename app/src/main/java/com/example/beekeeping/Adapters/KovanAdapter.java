@@ -1,13 +1,9 @@
 package com.example.beekeeping.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,15 +12,11 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beekeeping.Database.Database;
-import com.example.beekeeping.Database.KovanlarDAO;
-import com.example.beekeeping.Fragments.KovanEkleFragment;
 import com.example.beekeeping.Fragments.KovanlarFragmentDirections;
 import com.example.beekeeping.Models.KovanModel;
 import com.example.beekeeping.R;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class KovanAdapter extends RecyclerView.Adapter<KovanAdapter.MyViewHolder> {
 

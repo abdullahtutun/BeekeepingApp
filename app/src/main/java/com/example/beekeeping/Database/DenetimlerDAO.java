@@ -2,7 +2,6 @@ package com.example.beekeeping.Database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 
@@ -74,11 +73,7 @@ public class DenetimlerDAO {
         SQLiteDatabase db = vt.getWritableDatabase();
         db.delete("denetimler","kovan_no=?",new String[]{kovan_no});
         db.close();
-
-
     }
-
-
 
     public void addDenetim(@NonNull Database vt, String kovan_no, String denetim_tarih, String cerceve_sayisi, String arili_cerceve, String balli_cerceve,
                            String kabarik_cerceve, String ham_cerceve, String ana_ari, String gunluk_cerceve, String larva_cerceve, String kapali_cerceve, String kek,
@@ -129,7 +124,6 @@ public class DenetimlerDAO {
         cursor.close();
 
         db.close();
-
 
         return count;
     }

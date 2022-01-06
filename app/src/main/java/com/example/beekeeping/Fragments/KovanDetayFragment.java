@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.text.TextUtils;
@@ -19,8 +18,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.beekeeping.Activities.MainActivity;
-import com.example.beekeeping.Adapters.KovanAdapter;
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Database.DenetimlerDAO;
 import com.example.beekeeping.Database.KovanlarDAO;

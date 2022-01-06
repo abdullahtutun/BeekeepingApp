@@ -17,7 +17,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,7 +27,6 @@ import com.example.beekeeping.Adapters.GridAdapter;
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Database.EventsDAO;
 import com.example.beekeeping.Models.EventModel;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -37,8 +35,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import butterknife.BindView;
 
 public class CalendarLayout extends LinearLayout {
 
@@ -70,14 +66,14 @@ public class CalendarLayout extends LinearLayout {
         initializeLayout();
         setUpCalendar();
 
-        clickedPreviousNext();
+        clickedPreviousOrNext();
 
         clickedGridView();
 
         longClickedGridView();
     }
 
-    private void clickedPreviousNext(){
+    private void clickedPreviousOrNext(){
 
         previousBtn.setOnClickListener(new OnClickListener() {
             @Override
@@ -134,6 +130,7 @@ public class CalendarLayout extends LinearLayout {
                         timePickerDialog.show();
                     }
                 });
+
                 final String date = eventDateFormate.format(dates.get(position));
                 final String month = monthFormat.format(dates.get(position));
                 final String year = yearFormat.format(dates.get(position));

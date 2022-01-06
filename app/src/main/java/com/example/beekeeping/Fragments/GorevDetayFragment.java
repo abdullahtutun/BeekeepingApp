@@ -1,7 +1,6 @@
 package com.example.beekeeping.Fragments;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,9 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.beekeeping.Database.Database;
-import com.example.beekeeping.Database.DenetimlerDAO;
 import com.example.beekeeping.Database.GorevlerDAO;
-import com.example.beekeeping.Database.KovanlarDAO;
 import com.example.beekeeping.R;
 import com.google.android.material.snackbar.Snackbar;
 

@@ -2,9 +2,7 @@ package com.example.beekeeping.Fragments;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,13 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.beekeeping.Adapters.DenetimAdapter;
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Database.DenetimlerDAO;
-import com.example.beekeeping.Database.KovanlarDAO;
 import com.example.beekeeping.Models.DenetimModel;
 import com.example.beekeeping.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

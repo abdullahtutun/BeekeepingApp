@@ -124,11 +124,6 @@ public class MainActivity extends AppCompatActivity {
         View header = navigationView.inflateHeaderView(R.layout.nav_header);
     }
 
-    // navigation menu itemlerinin ikonlarını renklendirir.
-    private void setItemIconColor(){
-        navigationView.setItemIconTintList(null);
-    }
-
     private void setLanguage(){
 
         String languageToLoad  = "tr";

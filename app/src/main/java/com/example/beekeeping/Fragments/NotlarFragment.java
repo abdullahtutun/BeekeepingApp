@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.example.beekeeping.Adapters.NotAdapter;
 import com.example.beekeeping.Database.Database;
-import com.example.beekeeping.Database.KovanlarDAO;
 import com.example.beekeeping.Database.NotlarDAO;
 import com.example.beekeeping.Models.NotModel;
 import com.example.beekeeping.R;

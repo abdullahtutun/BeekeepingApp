@@ -14,12 +14,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.beekeeping.Adapters.GorevAdapter;
-import com.example.beekeeping.Adapters.KovanAdapter;
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Database.GorevlerDAO;
-import com.example.beekeeping.Database.KovanlarDAO;
 import com.example.beekeeping.Models.GorevModel;
-import com.example.beekeeping.Models.KovanModel;
 import com.example.beekeeping.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

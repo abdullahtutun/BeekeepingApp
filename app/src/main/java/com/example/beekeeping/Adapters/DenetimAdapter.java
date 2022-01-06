@@ -1,7 +1,6 @@
 package com.example.beekeeping.Adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.Fragments.DenetimlerFragmentDirections;
 import com.example.beekeeping.Models.DenetimModel;
-import com.example.beekeeping.Models.KovanModel;
 import com.example.beekeeping.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DenetimAdapter extends RecyclerView.Adapter<DenetimAdapter.MyViewHolder> {
 

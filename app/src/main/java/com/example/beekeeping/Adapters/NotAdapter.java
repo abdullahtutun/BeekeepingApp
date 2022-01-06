@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,6 @@ import com.example.beekeeping.Models.NotModel;
 import com.example.beekeeping.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NotAdapter extends RecyclerView.Adapter<NotAdapter.MyViewHolder> {
 
