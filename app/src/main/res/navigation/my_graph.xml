@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/arilik"
-        android:name="com.example.beekeeping.Fragments.ArilikFragment"
+        android:name="com.example.beekeeping.fragments.ArilikFragment"
         android:label="Arılık"
         tools:layout="@layout/fragment_arilik" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/kovanlar"
-        android:name="com.example.beekeeping.Fragments.KovanlarFragment"
+        android:name="com.example.beekeeping.fragments.KovanlarFragment"
         android:label="Kovanlar"
         tools:layout="@layout/fragment_kovanlar" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/denetimler"
-        android:name="com.example.beekeeping.Fragments.DenetimlerFragment"
+        android:name="com.example.beekeeping.fragments.DenetimlerFragment"
         android:label="Denetimler"
         tools:layout="@layout/fragment_denetimler" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/gorevler"
-        android:name="com.example.beekeeping.Fragments.GorevlerFragment"
+        android:name="com.example.beekeeping.fragments.GorevlerFragment"
         android:label="Görevler"
         tools:layout="@layout/fragment_gorevler" >
         <action
@@ -78,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/notlar"
-        android:name="com.example.beekeeping.Fragments.NotlarFragment"
+        android:name="com.example.beekeeping.fragments.NotlarFragment"
         android:label="Notlar"
         tools:layout="@layout/fragment_notlar" >
         <action
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/denetimEkleFragment"
-        android:name="com.example.beekeeping.Fragments.DenetimEkleFragment"
+        android:name="com.example.beekeeping.fragments.DenetimEkleFragment"
         android:label="Denetim Ekle" >
         <action
             android:id="@+id/action_denetimEkleFragment_to_denetimler"
@@ -103,7 +103,7 @@
     </fragment>
     <fragment
         android:id="@+id/gorevEkleFragment"
-        android:name="com.example.beekeeping.Fragments.GorevEkleFragment"
+        android:name="com.example.beekeeping.fragments.GorevEkleFragment"
         android:label="Görev Ekle" >
         <action
             android:id="@+id/action_gorevEkleFragment_to_gorevler"
@@ -111,7 +111,7 @@
     </fragment>
     <fragment
         android:id="@+id/notEkleFragment"
-        android:name="com.example.beekeeping.Fragments.NotEkleFragment"
+        android:name="com.example.beekeeping.fragments.NotEkleFragment"
         android:label="Not Ekle" >
         <action
             android:id="@+id/action_notEkleFragment_to_notlar"
@@ -119,7 +119,7 @@
     </fragment>
     <fragment
         android:id="@+id/kovanEkleFragment"
-        android:name="com.example.beekeeping.Fragments.KovanEkleFragment"
+        android:name="com.example.beekeeping.fragments.KovanEkleFragment"
         android:label="Kovan Ekle" >
         <action
             android:id="@+id/action_kovanEkleFragment_to_kovanlar"
@@ -127,7 +127,7 @@
     </fragment>
     <fragment
         android:id="@+id/denetimDetayFragment"
-        android:name="com.example.beekeeping.Fragments.DenetimDetayFragment"
+        android:name="com.example.beekeeping.fragments.DenetimDetayFragment"
         android:label="DenetimDetayFragment">
 
         <argument android:name="denetim"
@@ -137,7 +137,7 @@
     </fragment>
     <fragment
         android:id="@+id/gorevDetayFragment"
-        android:name="com.example.beekeeping.Fragments.GorevDetayFragment"
+        android:name="com.example.beekeeping.fragments.GorevDetayFragment"
         android:label="GorevDetayFragment" >
         <argument
             android:name="gorev"
@@ -147,7 +147,7 @@
     </fragment>
     <fragment
         android:id="@+id/kovanDetayFragment"
-        android:name="com.example.beekeeping.Fragments.KovanDetayFragment"
+        android:name="com.example.beekeeping.fragments.KovanDetayFragment"
         android:label="Kovan Detay" >
 
         <argument android:name="kovan"
@@ -164,7 +164,7 @@
 
     <fragment
         android:id="@+id/notDetayFragment"
-        android:name="com.example.beekeeping.Fragments.NotDetayFragment"
+        android:name="com.example.beekeeping.fragments.NotDetayFragment"
         android:label="fragment_not_detay"
         tools:layout="@layout/fragment_not_detay" >
         <argument
@@ -175,16 +175,16 @@
     </fragment>
     <fragment
         android:id="@+id/rehber"
-        android:name="com.example.beekeeping.Fragments.RehberFragment"
+        android:name="com.example.beekeeping.fragments.RehberFragment"
         android:label="Rehber"
         tools:layout="@layout/fragment_rehber" />
     <fragment
         android:id="@+id/yonetmelik"
-        android:name="com.example.beekeeping.Fragments.YonetmelikFragment"
+        android:name="com.example.beekeeping.fragments.YonetmelikFragment"
         android:label="Yönetmelik"
         tools:layout="@layout/fragment_yonetmelik" />
     <fragment
         android:id="@+id/takvimFragment"
-        android:name="com.example.beekeeping.Fragments.TakvimFragment"
+        android:name="com.example.beekeeping.fragments.TakvimFragment"
         android:label="TakvimFragment" />
 </navigation>

@@ -22,11 +22,11 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.beekeeping.Adapters.EventAdapter;
-import com.example.beekeeping.Adapters.GridAdapter;
-import com.example.beekeeping.Database.Database;
-import com.example.beekeeping.Database.EventsDAO;
-import com.example.beekeeping.Models.EventModel;
+import com.example.beekeeping.adapters.EventAdapter;
+import com.example.beekeeping.adapters.GridAdapter;
+import com.example.beekeeping.database.Database;
+import com.example.beekeeping.database.EventsDAO;
+import com.example.beekeeping.models.EventModel;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
