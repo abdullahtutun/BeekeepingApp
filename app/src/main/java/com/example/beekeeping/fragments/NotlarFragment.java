@@ -13,10 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.beekeeping.adapters.NotAdapter;
-import com.example.beekeeping.database.Database;
-import com.example.beekeeping.database.NotlarDAO;
-import com.example.beekeeping.models.NotModel;
+import com.example.beekeeping.Adapters.NotAdapter;
+import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.NotlarDAO;
+import com.example.beekeeping.Models.NotModel;
 import com.example.beekeeping.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

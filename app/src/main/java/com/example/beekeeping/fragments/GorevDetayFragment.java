@@ -15,8 +15,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.beekeeping.database.Database;
-import com.example.beekeeping.database.GorevlerDAO;
+import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.GorevlerDAO;
 import com.example.beekeeping.R;
 import com.google.android.material.snackbar.Snackbar;
 

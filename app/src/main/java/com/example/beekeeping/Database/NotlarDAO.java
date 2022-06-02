@@ -1,4 +1,4 @@
-package com.example.beekeeping.database;
+package com.example.beekeeping.Database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -6,7 +6,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 
-import com.example.beekeeping.models.NotModel;
+import com.example.beekeeping.Models.NotModel;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

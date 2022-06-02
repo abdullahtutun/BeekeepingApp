@@ -13,8 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.beekeeping.adapters.DailyWeatherAdapter;
-import com.example.beekeeping.models.Weather;
+import com.example.beekeeping.Adapters.DailyWeatherAdapter;
+import com.example.beekeeping.Models.Weather;
 import com.example.beekeeping.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.JsonArray;

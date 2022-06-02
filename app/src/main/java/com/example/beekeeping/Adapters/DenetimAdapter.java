@@ -1,4 +1,4 @@
-package com.example.beekeeping.adapters;
+package com.example.beekeeping.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,9 +11,9 @@ import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.beekeeping.database.Database;
+import com.example.beekeeping.Database.Database;
 import com.example.beekeeping.fragments.DenetimlerFragmentDirections;
-import com.example.beekeeping.models.DenetimModel;
+import com.example.beekeeping.Models.DenetimModel;
 import com.example.beekeeping.R;
 
 import java.util.ArrayList;

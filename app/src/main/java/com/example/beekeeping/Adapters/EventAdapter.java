@@ -1,4 +1,4 @@
-package com.example.beekeeping.adapters;
+package com.example.beekeeping.Adapters;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.beekeeping.database.Database;
-import com.example.beekeeping.database.EventsDAO;
-import com.example.beekeeping.models.EventModel;
+import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.EventsDAO;
+import com.example.beekeeping.Models.EventModel;
 import com.example.beekeeping.R;
 
 import java.util.ArrayList;

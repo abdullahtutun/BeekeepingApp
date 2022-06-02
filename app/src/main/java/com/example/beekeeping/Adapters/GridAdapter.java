@@ -1,4 +1,4 @@
-package com.example.beekeeping.adapters;
+package com.example.beekeeping.Adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.beekeeping.models.EventModel;
+import com.example.beekeeping.Models.EventModel;
 import com.example.beekeeping.R;
 
 import java.text.ParseException;

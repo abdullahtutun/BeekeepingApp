@@ -1,4 +1,4 @@
-package com.example.beekeeping.database;
+package com.example.beekeeping.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

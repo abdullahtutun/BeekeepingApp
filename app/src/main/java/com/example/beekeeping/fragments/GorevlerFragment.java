@@ -13,10 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.beekeeping.adapters.GorevAdapter;
-import com.example.beekeeping.database.Database;
-import com.example.beekeeping.database.GorevlerDAO;
-import com.example.beekeeping.models.GorevModel;
+import com.example.beekeeping.Adapters.GorevAdapter;
+import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.GorevlerDAO;
+import com.example.beekeeping.Models.GorevModel;
 import com.example.beekeeping.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

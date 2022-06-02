@@ -1,4 +1,4 @@
-package com.example.beekeeping.adapters;
+package com.example.beekeeping.Adapters;
 
 import android.content.Context;
 import android.icu.text.DateFormat;
@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import com.example.beekeeping.models.Weather;
+import com.example.beekeeping.Models.Weather;
 import com.example.beekeeping.R;
 import com.koushikdutta.ion.Ion;
 

@@ -1,4 +1,4 @@
-package com.example.beekeeping.models;
+package com.example.beekeeping.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,4 +1,4 @@
-package com.example.beekeeping.database;
+package com.example.beekeeping.Database;
 
 import android.content.ContentValues;
 import android.database.Cursor;

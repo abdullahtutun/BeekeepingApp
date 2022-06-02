@@ -1,4 +1,4 @@
-package com.example.beekeeping.database;
+package com.example.beekeeping.Database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import com.example.beekeeping.models.DenetimModel;
+import com.example.beekeeping.Models.DenetimModel;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

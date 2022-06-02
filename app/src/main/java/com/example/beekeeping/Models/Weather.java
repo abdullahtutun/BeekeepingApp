@@ -1,4 +1,4 @@
-package com.example.beekeeping.models;
+package com.example.beekeeping.Models;
 
 public class Weather {
 

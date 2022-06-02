@@ -16,8 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.beekeeping.database.Database;
-import com.example.beekeeping.database.DenetimlerDAO;
+import com.example.beekeeping.Database.Database;
+import com.example.beekeeping.Database.DenetimlerDAO;
 import com.example.beekeeping.R;
 
 import java.text.DateFormat;
